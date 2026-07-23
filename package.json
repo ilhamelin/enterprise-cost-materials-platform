@@ -1,0 +1,10 @@
+{
+  "name": "materialcost-enterprise-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise Raw Materials & Financial Cost-Performance Platform",
+  "scripts": {
+    "build": "cd frontend && npm install && npx vite build",
+    "test": "cd frontend && npm test"
+  }
+}
