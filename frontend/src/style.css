@@ -1,0 +1,249 @@
+:root {
+  --bg-dark: hsl(220, 35%, 8%);
+  --bg-card: hsla(220, 35%, 12%, 0.75);
+  --bg-card-hover: hsla(220, 35%, 16%, 0.9);
+  --border-color: hsla(215, 25%, 25%, 0.45);
+  --border-glow: hsla(160, 84%, 45%, 0.35);
+
+  --text-primary: hsl(210, 40%, 98%);
+  --text-secondary: hsl(215, 20%, 70%);
+  --text-muted: hsl(215, 16%, 50%);
+
+  --accent-emerald: hsl(160, 84%, 45%);
+  --accent-cyan: hsl(190, 90%, 50%);
+  --accent-blue: hsl(215, 90%, 60%);
+  --accent-purple: hsl(270, 85%, 65%);
+  --accent-amber: hsl(38, 95%, 55%);
+  --accent-rose: hsl(350, 89%, 60%);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --shadow-glow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  --glass-backdrop: blur(16px);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 10% 10%, hsla(160, 84%, 45%, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 90% 90%, hsla(215, 90%, 60%, 0.06) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-glow);
+  border-radius: var(--radius-lg);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header & Navigation Tabs */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--accent-emerald), var(--accent-cyan));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #fff;
+  box-shadow: 0 0 20px hsla(160, 84%, 45%, 0.4);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: hsla(220, 35%, 6%, 0.6);
+  padding: 0.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: hsla(215, 25%, 25%, 0.3);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--accent-emerald), var(--accent-blue));
+  color: white;
+  box-shadow: 0 4px 15px hsla(160, 84%, 45%, 0.3);
+}
+
+/* Form Controls */
+.input-control {
+  background: hsla(220, 35%, 6%, 0.7);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
+}
+
+.input-control:focus {
+  outline: none;
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 8px hsla(160, 84%, 45%, 0.3);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-emerald), var(--accent-cyan));
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px hsla(160, 84%, 45%, 0.4);
+}
+
+.btn-secondary {
+  background: hsla(215, 25%, 20%, 0.4);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: hsla(215, 25%, 25%, 0.7);
+  border-color: var(--accent-cyan);
+}
+
+.btn-danger {
+  background: hsla(350, 89%, 60%, 0.15);
+  color: var(--accent-rose);
+  border: 1px solid hsla(350, 89%, 60%, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background: hsla(350, 89%, 60%, 0.3);
+}
+
+/* Tables */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.custom-table th {
+  background: hsla(220, 35%, 6%, 0.8);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid hsla(215, 25%, 20%, 0.3);
+  color: var(--text-primary);
+}
+
+.custom-table tr:hover td {
+  background: hsla(220, 35%, 15%, 0.4);
+}
+
+/* Badges */
+.badge-risk {
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.risk-low { background: hsla(160, 84%, 45%, 0.15); color: var(--accent-emerald); border: 1px solid hsla(160, 84%, 45%, 0.3); }
+.risk-medium { background: hsla(38, 95%, 55%, 0.15); color: var(--accent-amber); border: 1px solid hsla(38, 95%, 55%, 0.3); }
+.risk-high { background: hsla(350, 89%, 60%, 0.15); color: var(--accent-rose); border: 1px solid hsla(350, 89%, 60%, 0.3); }
+.risk-critical { background: hsla(350, 89%, 60%, 0.3); color: #fff; border: 1px solid var(--accent-rose); }
+
+/* Print styles */
+@media print {
+  body { background: white; color: black; }
+  .app-header, .nav-tabs, .btn-primary, .btn-secondary { display: none !important; }
+  .glass-panel { border: 1px solid #ccc; box-shadow: none; backdrop-filter: none; background: white; color: black; }
+}

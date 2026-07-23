@@ -1,0 +1,19 @@
+{
+  "name": "enterprise-cost-materials-service",
+  "version": "1.0.0",
+  "description": "Microservice for Enterprise Raw Materials, Cost-Performance Analysis, and KPI/KRI Calculation Engine",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
+  }
+}
